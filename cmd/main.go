@@ -332,9 +332,9 @@ func generateProject(outputDir string, config ScaffoldConfig, lang Language) err
 
 func generateGoProject(outputDir string, config ScaffoldConfig) error {
 	files := map[string]string{
-		"cmd/main.go":            goMain(config),
-		"internal/pkg/pkg.go":    goPkg(config),
-		"go.mod":                 goMod(config),
+		"cmd/main.go":         goMain(config),
+		"internal/pkg/pkg.go": goPkg(config),
+		"go.mod":              goMod(config),
 	}
 
 	if config.IncludeTests {
@@ -510,10 +510,10 @@ func goReadme(config ScaffoldConfig) string {
 
 func generatePythonProject(outputDir string, config ScaffoldConfig) error {
 	files := map[string]string{
-		"src/app.py":          pyApp(config),
-		"tests/test_app.py":   pyTest(config),
-		"pyproject.toml":      pyPyproject(config),
-		".gitignore":          pyGitignore(),
+		"src/app.py":        pyApp(config),
+		"tests/test_app.py": pyTest(config),
+		"pyproject.toml":    pyPyproject(config),
+		".gitignore":        pyGitignore(),
 	}
 
 	if config.IncludeLicense {
